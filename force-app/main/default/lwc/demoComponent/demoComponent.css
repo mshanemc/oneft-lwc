@@ -1,0 +1,63 @@
+.birthday {
+  color: green;
+  font-size: 5rem;
+  height: 8rem;
+  text-align: center;
+  margin-left: var(--lwc-varSpacingHorizontalSmall);
+  margin-right: var(--lwc-varSpacingHorizontalSmall);
+}
+
+.birthday.fancy {
+  color: black;
+  animation-name: colorCycle;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes colorCycle {
+  0% {
+    color: black;
+    font-size: 5rem;
+  }
+
+  12% {
+    color: red;
+    font-size: 5.25rem;
+  }
+
+  25% {
+    color: orange;
+    font-size: 5.5rem;
+  }
+
+  37% {
+    color: yellow;
+    font-size: 5.75rem;
+  }
+
+  50% {
+    color: green;
+    font-size: 6rem;
+  }
+
+  62% {
+    color: rgb(0, 128, 115);
+    font-size: 5.75rem;
+  }
+
+  75% {
+    color: blue;
+    font-size: 5.5rem;
+  }
+
+  87% {
+    color: purple;
+    font-size: 5.25rem;
+  }
+
+  100% {
+    color: black;
+    font-size: 5rem;
+  }
+}
