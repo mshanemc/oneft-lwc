@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <dynamicChoiceSets>
+        <name>Contacts</name>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <limit>100</limit>
+        <object>Contact</object>
+        <sortField>FirstName</sortField>
+        <sortOrder>Asc</sortOrder>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
+    <interviewLabel>Contact Updates {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contact Updates</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Contact_Information</name>
+        <label>Contact Information</label>
+        <locationX>470</locationX>
+        <locationY>50</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Birthday</name>
+            <extensionName>c:demoComponent</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>Contacts</elementReference>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Contact_Selection</name>
+        <label>Contact Selection</label>
+        <locationX>268</locationX>
+        <locationY>50</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Contact_Information</targetReference>
+        </connector>
+        <fields>
+            <name>Pick_a_Contact</name>
+            <choiceReferences>Contacts</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Pick a Contact</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Contact_Selection</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+</Flow>

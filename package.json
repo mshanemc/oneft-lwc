@@ -27,6 +27,8 @@
   },
   "homepage": "https://github.com/mshanemc/oneft-lwc",
   "devDependencies": {
-    "nodemon": "^1.19.2"
+    "nodemon": "^1.19.2",
+    "prettier": "^1.19.1",
+    "prettier-plugin-apex": "^1.2.0"
   }
 }
