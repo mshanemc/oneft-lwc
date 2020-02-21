@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <flexiPageRegions>
         <componentInstances>
@@ -65,10 +65,7 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
-            <componentInstanceProperties>
-                <name>active</name>
-                <value>true</value>
-            </componentInstanceProperties>
+
             <componentInstanceProperties>
                 <name>body</name>
                 <value>relatedTabContent</value>
@@ -80,6 +77,10 @@
             <componentName>flexipage:tab</componentName>
         </componentInstances>
         <componentInstances>
+            <componentInstanceProperties>
+                <name>active</name>
+                <value>true</value>
+            </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>body</name>
                 <value>detailTabContent</value>
